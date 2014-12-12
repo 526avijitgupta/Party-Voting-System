@@ -8,8 +8,8 @@ public class headMenu {
 
 	static Vector cDetails = new Vector();
 	static Vector cVoteDetails = new Vector();
-	static ManageVector manage = new ManageVector("sample.txt");
-	static ManageVector res = new ManageVector("res.txt");
+	static ManageVector party_head = new ManageVector("head_details.txt");
+	static ManageVector vote_record = new ManageVector("voting_record.txt");
 
 	private static void AddDetails(int cid,String cn,String cdob,String cg,int ca,String cr) {
 		CandidateDetails temp = new CandidateDetails(cid,cn,cdob,cg,ca,cr);
@@ -20,7 +20,7 @@ public class headMenu {
 
 	public static void displayAllPass()	{
 		CandidateVotingDetails temp2;
-		cVoteDetails = res.loadVector();
+		cVoteDetails = vote_record.loadVector();
 
 		System.out.println(" | Candidate ID | Name | Address | Phone No. | Email Add | ");
 		for(int i = 0; i<cVoteDetails.size();i++) {
@@ -95,13 +95,13 @@ public class headMenu {
 	}
 
 	public static void saveEntry() {
-		manage.saveVector(cDetails);
+		party_head.saveVector(cDetails);
 		System.out.println("Entries Saved!");
 
 	}
 
 	public static void loadEntry() {
-		cDetails = manage.loadVector();
+		cDetails = party_head.loadVector();
 		System.out.println("Successfully Loaded!");
 	}
 

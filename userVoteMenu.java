@@ -8,11 +8,11 @@ public class userVoteMenu {
 
 	static Vector userDetails = new Vector();
 	static Vector uDetails = new Vector();
-	static ManageVector ures = new ManageVector("res.txt");
-	static ManageVector manager = new ManageVector("sample.txt");
+	static ManageVector vote_record = new ManageVector("voting_record.txt");
+	static ManageVector party_head = new ManageVector("head_details.txt");
 
 	private static void AddVoteDetails(int cid, String personName, String personAdd, int personPhone, String personEmail) {
-	    uDetails = manager.loadVector();
+	    uDetails = party_head.loadVector();
 		CandidateVotingDetails temp2 = new CandidateVotingDetails(cid,personName,personAdd,personPhone,personEmail);		
 		userDetails.addElement(temp2);
 		saveEntry();
@@ -58,7 +58,7 @@ public class userVoteMenu {
 		CandidateDetails temp = new CandidateDetails();
 		CandidateDetails temp2 = new CandidateDetails();
 
-		uDetails = manager.loadVector();
+		uDetails = party_head.loadVector();
 
 		for(int i = 0;i<uDetails.size();i++) {
 			temp2 = (CandidateDetails)uDetails.elementAt(i);
@@ -74,7 +74,7 @@ public class userVoteMenu {
 		String Name;
 		String Address;
 
-		uDetails = manager.loadVector();
+		uDetails = party_head.loadVector();
 
 		System.out.println("Please Enter the Following information to cancel your vote");
 		System.out.println("Please Enter your Name :   ");
@@ -123,7 +123,7 @@ public class userVoteMenu {
 		System.out.println("Enter Candidate Id: ");
 		cid = read.GetInt();
 
-        uDetails = manager.loadVector();
+        uDetails = party_head.loadVector();
 
 		System.out.println(" | Candidate ID | Name | Date of Birth | Gender | Age | Region | ");
 
@@ -137,13 +137,13 @@ public class userVoteMenu {
 	}
 
 	public static void saveEntry() {
-		ures.saveVector(userDetails);
+		vote_record.saveVector(userDetails);
 		System.out.println("Saved Successfully!");
 	}
 
 
 	public static void loadEntry() {
-		userDetails = ures.loadVector();
+		userDetails = vote_record.loadVector();
 		System.out.println("Loaded Successfully!");
 	}
 

@@ -6,15 +6,15 @@ import java.io.*;
 
 public class systemUsers {
 
-  	static ManageVector system1 = new ManageVector("login1.txt");
-	static Vector systemuser1 = new Vector();
+  	static ManageVector login_file = new ManageVector("login_details.txt");
+	static Vector userVector = new Vector();
 
     public static void saveUser() {
-		system1.saveVector(systemuser1);
+		login_file.saveVector(userVector);
 	}
 
     public static void loadUser() {
-		systemuser1 = system1.loadVector();
+		userVector = login_file.loadVector();
 	}
 
     public static void addNewUser() throws java.io.IOException {
@@ -28,7 +28,7 @@ public class systemUsers {
         String pass = in.next();
         System.out.println("Please choose one of the following:\n1. Party Head\n2. User");
         int n = in.nextInt();
-        systemuser1.addElement(new Users(name,pass,n));
+        userVector.addElement(new Users(name,pass,n));
 		
         saveUser();
     }
@@ -44,8 +44,8 @@ public class systemUsers {
 
 		Users Temp = new Users();
 
-		for(int i=0;i<systemuser1.size();i++) {
-			Temp = (Users)systemuser1.elementAt(i);
+		for(int i=0;i<userVector.size();i++) {
+			Temp = (Users)userVector.elementAt(i);
 			if(Temp.Name.equals(Name) && Temp.Password.equals(pass)) {
 				if(Temp.type == 1) {
 	                headMenu mymenu = new headMenu();
