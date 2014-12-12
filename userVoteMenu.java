@@ -12,6 +12,7 @@ public class userVoteMenu {
 	static ManageVector party_head = new ManageVector("head_details.txt");
 
 	private static void AddVoteDetails(int cid, String personName, String personAdd, int personPhone, String personEmail) {
+
 	    uDetails = party_head.loadVector();
 		CandidateVotingDetails temp2 = new CandidateVotingDetails(cid,personName,personAdd,personPhone,personEmail);		
 		userDetails.addElement(temp2);
@@ -44,7 +45,7 @@ public class userVoteMenu {
 	public static void displayAllPass()	{
 		CandidateVotingDetails temp2;
 
-		System.out.println(" | Candidate ID | Name | Address | Phone No. | Email Add | Res Type | Seats Reserved | ");
+		System.out.println(" | Candidate ID | Name | Address | Phone No. | Email Add | ");
 
 		for(int i = 0; i<userDetails.size();i++) {
 			temp2 =(CandidateVotingDetails)userDetails.elementAt(i);
@@ -77,9 +78,9 @@ public class userVoteMenu {
 		uDetails = party_head.loadVector();
 
 		System.out.println("Please Enter the Following information to cancel your vote");
-		System.out.println("Please Enter your Name :   ");
+		System.out.println("Please Enter your Name: ");
 		Name = read.GetString();
-		System.out.println("Please Enter your Address :  ");
+		System.out.println("Please Enter your Address: ");
 		Address = read.GetString();
 		CandidateVotingDetails temp = new CandidateVotingDetails();
 
@@ -156,7 +157,7 @@ public class userVoteMenu {
 			System.out.println("1. Vote for Candidate");
 			System.out.println("2. Cancel Vote");
 			System.out.println("3. View Candidates");
-			System.out.println("4. Search for Voter Details");
+			System.out.println("4. Voting History");
 			System.out.println("5. Quit");
 
 			System.out.println("Enter your choice!");

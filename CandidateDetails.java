@@ -1,5 +1,5 @@
 
-// For candidate details to be shown to the user ==============================
+// For candidate details to be entered by the head ==============================
 
 import java.util.*;
 import java.io.*;
@@ -14,7 +14,7 @@ public class CandidateDetails implements Serializable {
 	public String cr;
 
     public CandidateDetails() {
-	        super();
+	    super();
 	}
 
 	public CandidateDetails(int cid, String cn, String cdob, String cg, int ca, String cr) {
@@ -26,6 +26,7 @@ public class CandidateDetails implements Serializable {
 		this.cr =cr;
 	}
 
+	// Polymorphism
 	public void setcid(int cid) {
 		this.cid = cid;
 	}

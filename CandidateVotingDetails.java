@@ -15,7 +15,6 @@ import java.io.*;
 	public CandidateVotingDetails() {
 		super();
 	}
-
  	public CandidateVotingDetails(int cid, String name, String address, int ph, String email) {
 		this.cid = cid;
 		this.Name = name;
@@ -23,10 +22,12 @@ import java.io.*;
 		this.phone = ph;
 		this.Email = email;
 	}
-
-	public void setCid(int cid) {
+	
+	// Polymorphism
+	public void setcid(int cid) {
 		this.cid = cid;
 	}
+
 	public void setName(String Name1) {
 		this.Name = Name1;
 	}
@@ -36,7 +37,6 @@ import java.io.*;
 	public void setPhone(int ph) {
 		this.phone = ph;
 	}
-
 	public void setEmail(String email) {
 		this.Email = email;
 	}

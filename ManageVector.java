@@ -14,7 +14,6 @@ public class ManageVector {
 	}
 
 	public void saveVector(Vector temp)	{
-
 		try {
 			ObjectOutputStream saveObject = new ObjectOutputStream(new FileOutputStream(filePath));
 		    saveObject.writeObject(temp);

@@ -4,6 +4,21 @@
 import java.util.*;
 import java.io.*;
 
+class Users implements Serializable {
+
+	public String Name;
+	public String Password;
+	public int type;
+	public Users() {
+		// Constructor definition
+	}
+	public Users(String one, String two, int three)	{
+		this.Name = one;
+		this.Password = two;
+		this.type = three;
+	}
+}
+
 public class systemUsers {
 
   	static ManageVector login_file = new ManageVector("login_details.txt");
@@ -18,6 +33,7 @@ public class systemUsers {
 	}
 
     public static void addNewUser() throws java.io.IOException {
+        
         System.out.println("Please Enter your Name: ");
 		
 		Scanner in = new Scanner(System.in);
@@ -29,7 +45,6 @@ public class systemUsers {
         System.out.println("Please choose one of the following:\n1. Party Head\n2. User");
         int n = in.nextInt();
         userVector.addElement(new Users(name,pass,n));
-		
         saveUser();
     }
 
@@ -87,18 +102,3 @@ public class systemUsers {
  	}
 }
 
-
-class Users implements Serializable {
-
-	public String Name;
-	public String Password;
-	public int type;
-	public Users() {
-		// Constructor definition
-	}
-	public Users(String one, String two, int three)	{
-		this.Name = one;
-		this.Password = two;
-		this.type = three;
-	}
-}

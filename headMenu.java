@@ -12,13 +12,14 @@ public class headMenu {
 	static ManageVector vote_record = new ManageVector("voting_record.txt");
 
 	private static void AddDetails(int cid,String cn,String cdob,String cg,int ca,String cr) {
+
 		CandidateDetails temp = new CandidateDetails(cid,cn,cdob,cg,ca,cr);
 		cDetails.addElement(temp);
 		System.out.println("Entry Success!");
 	}
 
-
 	public static void displayAllPass()	{
+
 		CandidateVotingDetails temp2;
 		cVoteDetails = vote_record.loadVector();
 
@@ -61,7 +62,7 @@ public class headMenu {
 
 		System.out.println(" | Candidate ID. | Name | Date of Birth | Gender | Age | Region | ");
 		for(int i = 0; i<cDetails.size();i++) {
-			temp =(CandidateDetails)cDetails.elementAt(i);
+			temp = (CandidateDetails)cDetails.elementAt(i);
 			System.out.println(" | " + temp.cid + " | " + temp.cn + " | " + temp.cdob + " | " + temp.cg + " | " + temp.ca + " | " + temp.cr + " | ");
 		}
 	}
@@ -104,7 +105,6 @@ public class headMenu {
 		cDetails = party_head.loadVector();
 		System.out.println("Successfully Loaded!");
 	}
-
 
 	public static void showMenu() throws java.io.IOException {
 		int myInput;
